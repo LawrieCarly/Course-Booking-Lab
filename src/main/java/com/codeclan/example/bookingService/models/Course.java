@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "course")
+@Table(name = "courses")
 public class Course {
 
     @Id
@@ -69,7 +69,6 @@ public class Course {
     public void setRating(int rating) {
         this.rating = rating;
     }
-
     public List<Booking> getBookings() {
         return bookings;
     }

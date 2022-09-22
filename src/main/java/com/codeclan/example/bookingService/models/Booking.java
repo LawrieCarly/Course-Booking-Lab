@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "booking")
+@Table(name = "bookings")
 public class Booking {
 
     @Id
@@ -18,12 +18,12 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
-    @JsonIgnoreProperties({"booking"})
+    @JsonIgnoreProperties({"bookings"})
     Course course;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    @JsonIgnoreProperties({"booking"})
+    @JsonIgnoreProperties({"bookings"})
     Customer customer;
 
 
