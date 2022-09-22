@@ -3,6 +3,7 @@ package com.codeclan.example.bookingService.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,18 +23,18 @@ public class Customer {
     @Column
     private int age;
 
-    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("customers")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"customers"})
     public List<Booking> bookings;
 
     public Customer() {
     }
 
-    public Customer(String name, String town, int age, List<Booking> bookings) {
+    public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
-        this.bookings = bookings;
+        this.bookings = new ArrayList<>();
     }
 
     public Long getId() {
