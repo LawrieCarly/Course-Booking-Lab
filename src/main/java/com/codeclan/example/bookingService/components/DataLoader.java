@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.Date;
 
-@Component
+//@Component
 public class DataLoader implements ApplicationRunner {
 
     @Autowired
